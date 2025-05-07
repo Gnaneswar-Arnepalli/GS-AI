@@ -36,9 +36,11 @@ export const userSignup = async (
     // create token and store cookie
     res.clearCookie(COOKIE_NAME, {
       httpOnly: true,
-      domain: "localhost",
+      domain: ".onrender.com",
       signed: true,
       path: "/",
+      secure: true, // Required for HTTPS
+      sameSite: "none" // Required for cross-site cookies
     });
 
     const token = createToken(user._id.toString(), user.email, "7d");
@@ -46,7 +48,7 @@ export const userSignup = async (
     expires.setDate(expires.getDate() + 7);
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "localhost",
+      domain: ".onrender.com",
       expires,
       httpOnly: true,
       signed: true,
@@ -80,9 +82,11 @@ export const userLogin = async (
 
     res.clearCookie(COOKIE_NAME, {
       httpOnly: true,
-      domain: "localhost",
+      domain: ".onrender.com",
       signed: true,
       path: "/",
+      secure: true, // Required for HTTPS
+     sameSite: "none" // Required for cross-site cookies
     });
 
     const token = createToken(user._id.toString(), user.email, "7d");
@@ -90,10 +94,12 @@ export const userLogin = async (
     expires.setDate(expires.getDate() + 7);
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "localhost",
+      domain: ".onrender.com",
       expires,
       httpOnly: true,
       signed: true,
+      secure: true, // Required for HTTPS
+      sameSite: "none" // Required for cross-site cookies
     });
 
     return res.status(200).json({ message: "OK", name: user.name, email: user.email });
@@ -141,9 +147,11 @@ export const userLogout = async (
 
     res.clearCookie(COOKIE_NAME, {
       httpOnly: true,
-      domain: "localhost",
+      domain: ".onrender.com",
       signed: true,
       path: "/",
+      secure: true, // Required for HTTPS
+     sameSite: "none" // Required for cross-site cookies
     });
 
     return res
