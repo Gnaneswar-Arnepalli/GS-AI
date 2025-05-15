@@ -44,8 +44,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (data) {
       setUser({ email: data.email, name: data.name });
       setIsLoggedIn(true);
-       setToken(data.token); // Store token from API response
-      localStorage.setItem("token", data.token); // Persist token
+       setToken(data.token ?? null); // Store token from API response, fallback to null if undefined
+      localStorage.setItem("token", data.token ?? ""); // Persist token, fallback to empty string if undefined
     }
   };
 
