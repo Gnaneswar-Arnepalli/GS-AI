@@ -1,20 +1,30 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 
+// Determine the base API URL based on the environment
+const apiUrl = process.env.VITE_API_URL || 'http://localhost:500';
+
 export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      // Optional: only used during local development if calling /api endpoints
       '/api': {
-        target: 'http://localhost:5000', // Or your local backend port
+        target: apiUrl,
         changeOrigin: true,
         secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
   preview: {
-    // Allows Vercel/Render domains if you use `vite preview` for production preview
-    allowedHosts: ['ags-backend-x8rl.onrender.com'],
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: 'https://gs-ai-backend.onrender.com',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
   },
 });
