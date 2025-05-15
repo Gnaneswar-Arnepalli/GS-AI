@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-"scripts": {
-  "dev": "vite",
-  "build": "tsc && vite build && npm install --legacy-peer-deps",
-  "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-  "preview": "vite preview --port $PORT --host 0.0.0.0"
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && npm install --legacy-peer-deps",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview --port $PORT --host 0.0.0.0"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -31,14 +31,10 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/react-syntax-highlighter": "^15.5.13",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
-    "eslint": "^8.57.1", 
-   "@typescript-eslint/eslint-plugin": "^6.21.0",
-  "@typescript-eslint/parser": "^6.21.0"
-}
-
+    "eslint": "^8.57.1",
     "typescript": "^5.0.2",
     "vite": "^6.3.5"
   },
@@ -46,6 +42,6 @@
     "prismjs": "^1.30.0",
     "highlight.js": "^11.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
-  "eslint": "^8.0.0"
+    "eslint": "^8.0.0"
   }
 }
