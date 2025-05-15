@@ -17,8 +17,7 @@ app.use(morgan("dev"));
 
 app.use("/api/v1", appRouter);
 app.use(cors({ 
-    origin: ["http://localhost:5173",
-    "https://gs-ai-gnaneswars-projects-c1d92963.vercel.app"],
+    origin: ["http://localhost:5173"],
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization']
   }));
