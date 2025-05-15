@@ -21,33 +21,26 @@ const Chat = () => {
   const auth = useAuth();
   const [chatMessages, setChatMessages] = useState < Message[] > ([]);
   const handleSubmit = async () => {
-    const content = inputRef.current?.value as string;
+  const content = inputRef.current?.value as string;
+  if (!content.trim()) return;
+
+  try {
+    if (inputRef.current) inputRef.current.value = "";
     
-    // Don't proceed if empty message
-    if (!content.trim()) return;
-  
-    try {
-      // Clear input immediately
-      if (inputRef.current) inputRef.current.value = "";
-  
-      // Create optimistic UI update
-      const newMessage: Message = { role: "user", content };
-      setChatMessages((prev) => [...prev, newMessage]);
-  
-      // Get response
-      const chatData = await sendChatRequest(content);
-      
-      // Update with actual response
-      setChatMessages(prev => [
-        ...prev.filter(msg => msg.content !== content), // Remove optimistic update
-        newMessage,
-        ...chatData.chats.map((chat: { role: string; content: string }) => ({
-          role: chat.role as "user" | "assistant",
-          content: chat.content
-        }))
-      ]);
-  
-    } catch (error) {
+    const newMessage: Message = { role: "user", content };
+    setChatMessages((prev) => [...prev, newMessage]);
+
+    const chatData = await sendChatRequest(content);
+    
+    setChatMessages([
+      ...chatMessages,
+      newMessage,
+      ...chatData.chats.map((chat: any) => ({
+        role: chat.role,
+        content: chat.content,
+      })),
+    ]);
+  }catch (error) {
       console.error("Chat error:", error);
       
       // Remove the optimistic update if failed
@@ -55,6 +48,7 @@ const Chat = () => {
       
       // Show error to user
       const errorMessage = (error as any)?.response?.data?.message || "Failed to get chatbot response";
+      setChatMessages(chatMessages);
       toast.error(errorMessage, {
         id: "chat-error"
       });
