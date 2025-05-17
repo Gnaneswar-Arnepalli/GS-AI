@@ -2,7 +2,7 @@
 
 
 # GS-AI Chat Platform
-A production-ready AI chatbot platform with advanced authentication, built using the MERN stack and TypeScript. This project offers a ChatGPT-like interface, integrating OpenRouter's GPT-3.5 Turbo API, and is deployed with Vercel (frontend) and Render (backend).
+A production-ready AI chatbot platform with advanced authentication, built using the MERN stack and TypeScript. This project offers a ChatGPT-like interface, integrating OpenRouter's open API, and is deployed with Vercel (frontend) and Render (backend).
 
 🚀 Project Description
 GS-AI Chat is a full-stack AI chatbot platform developed with the MERN stack (MongoDB, Express, React, Node.js) and TypeScript. Designed as a SaaS application, it features:
@@ -34,7 +34,7 @@ Category	                     Technologies
 Frontend	                     React, TypeScript, Vite, Material UI, React Syntax Highlighter
 Backend	                       Node.js, Express, TypeScript, MongoDB, Mongoose
 Authentication	               JWT, HTTP-Only Cookies, bcrypt
-AI Integration	               OpenRouter API (GPT-3.5 Turbo)
+AI Integration	               OpenRouter API 
 DevOps	                       Render (Backend), Vercel (Frontend)
 APIs	                         RESTful API, Axios
 Styling	                       CSS-in-JS (Material UI), Responsive Design
@@ -47,7 +47,7 @@ Styling	                       CSS-in-JS (Material UI), Responsive Design
 => Logout: Clears the JWT token from the cookie, effectively logging the user out.
 
 🤖 OpenAI Integration via OpenRouter
-The chatbot leverages OpenAI's GPT-3.5 Turbo model through the OpenRouter API to generate responses based on user input. Ensure you have a valid API key from OpenRouter and have set it in the .env file.
+The chatbot leverages OpenAI model through the OpenRouter API to generate responses based on user input. Ensure you have a valid API key from OpenRouter and have set it in the .env file.
 
 📄 License 
 => This project is licensed under the MIT License.
