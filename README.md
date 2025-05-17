@@ -1,3 +1,6 @@
+<!-- Failed to upload "MERN_AI.mp4" -->
+
+
 # GS-AI Chat Platform
 A production-ready AI chatbot platform with advanced authentication, built using the MERN stack and TypeScript. This project offers a ChatGPT-like interface, integrating OpenRouter's GPT-3.5 Turbo API, and is deployed with Vercel (frontend) and Render (backend).
 
