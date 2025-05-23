@@ -1,61 +1,76 @@
-<!-- Failed to upload "MERN_AI.mp4" -->
+# AGS-AI 🤖
 
+AGS-AI is a full-stack AI chatbot web app built with the MERN stack (MongoDB, Express, React, Node.js) and powered by the OpenAI API. It allows users to chat in real time with an AI assistant — great for learning, coding help, or general knowledge.
 
-# GS-AI Chat Platform
-A production-ready AI chatbot platform with advanced authentication, built using the MERN stack and TypeScript. This project offers a ChatGPT-like interface, integrating OpenRouter's open API, and is deployed with Vercel (frontend) and Render (backend).
+## 🚀 Features
 
-🚀 Project Description
-GS-AI Chat is a full-stack AI chatbot platform developed with the MERN stack (MongoDB, Express, React, Node.js) and TypeScript. Designed as a SaaS application, it features:
+- 🔐 **Authentication & Security**
+  - Secure signup and login with JWT
+  - Auth tokens stored in HTTP-only cookies
+  - Auto-redirect for unauthenticated users
+  - Token validation on every reload
 
-🔒 Advanced Authentication System:
+- 💬 **AI Chat System**
+  - Real-time chat with OpenAI
+  - Persistent chat history stored in MongoDB
+  - Option to clear chat with one click
+  - Supports code block rendering for technical conversations
 
-=>JWT token-based authorization
-=>HTTP-only cookies for secure session management
-=>Protected routes with middleware validation
+- 🔁 **Reload-Friendly**
+  - Checks and restores sessions on page reload
+  - Loads chat history if authenticated
 
-💬 ChatGPT-like Functionality:
+- 🖥️ **Frontend**
+  - Built with React + TypeScript
+  - Material UI for clean, responsive design
+  - Pages: Home, Login, Signup, Chat, and 404 fallback
+  - Dynamic navigation based on login status
 
-=>Interactive chat interface with code highlighting
-=>Conversation history persistence in MongoDB
+- 🔧 **Backend**
+  - Node.js + Express with TypeScript
+  - Secure OpenAI API integration
+  - MongoDB Atlas for storing users and messages
+  - API routes for login, signup, chat, and chat deletion
+  - Robust error handling
 
+- 📡 **Dev Setup**
+  - Vite for frontend dev server
+  - Runs on separate ports with CORS and credentials configured
 
+## 🧠 What I Learned
 
-✨ Key Features:
+- Implementing secure JWT-based authentication
+- Real-time integration with OpenAI’s API
+- Building production-ready, reload-safe apps
+- Creating smooth user flows and scalable codebases
 
-=>Complete user authentication (signup/login/logout)
-=>Responsive Material UI design
-=>Rate limiting and API security
-=>Type-safe full-stack implementation
-=>End-to-end encrypted communications
-=>This project serves both as a production-ready SaaS template and an educational resource for building secure, scalable full-stack applications with modern web technologies.
+## 🛠️ Tech Stack
 
-🛠️ Technologies Used
-Category	                     Technologies
-Frontend	                     React, TypeScript, Vite, Material UI, React Syntax Highlighter
-Backend	                       Node.js, Express, TypeScript, MongoDB, Mongoose
-Authentication	               JWT, HTTP-Only Cookies, bcrypt
-AI Integration	               OpenRouter API 
-DevOps	                       Render (Backend), Vercel (Frontend)
-APIs	                         RESTful API, Axios
-Styling	                       CSS-in-JS (Material UI), Responsive Design
+- **Frontend:** React, TypeScript, Material UI, Vite
+- **Backend:** Node.js, Express, TypeScript
+- **Database:** MongoDB Atlas
+- **Auth:** JWT, HTTP-only cookies
+- **AI:** OpenAI API
 
-🔐 Authentication Flow
+## 📦 Getting Started
 
-=> Signup/Login: Users can register and log in using their credentials.
-=> JWT Tokens: Upon successful authentication, a JWT token is issued and stored in an HTTP-only cookie.
-=> Protected Routes: Certain routes are protected and require a valid JWT token to access.
-=> Logout: Clears the JWT token from the cookie, effectively logging the user out.
+### Prerequisites
 
-🤖 OpenAI Integration via OpenRouter
-The chatbot leverages OpenAI model through the OpenRouter API to generate responses based on user input. Ensure you have a valid API key from OpenRouter and have set it in the .env file.
+- Node.js and npm
+- MongoDB Atlas account
+- OpenAI API key
 
-📄 License 
-=> This project is licensed under the MIT License.
+## Backend
+ ## npm install
+ ## Create a .env file and add:
+##  MONGO_URI=your_mongo_uri
+ ## OPENAI_API_KEY=your_openai_key
+ ## JWT_SECRET=your_jwt_secret
+## npm run dev
+================
+## Frontend
+## npm install
+## npm run dev
 
-🙌 Acknowledgements
-
-=>OpenRouter for providing access to GPT-3.5 Turbo.
-=>Material UI for the sleek UI components.
-=>Express Validator for input validation.
-
-
+## Note:
+## Make sure both frontend and backend are running on different ports. CORS and credentials are already configured.
